@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroSustentável | Agrinho 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --verde-primario: #2d6a4f;
+            --verde-claro: #d8f3dc;
+            --acento: #95d5b2;
+            --texto: #1b4332;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            color: var(--texto);
+            background-color: #f8f9fa;
+        }
+
+        header {
+            background-color: var(--verde-primario);
+            color: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .container {
+            padding: 2rem 5%;
+        }
+
+        .grid-ferramentas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-bottom: 5px solid var(--verde-primario);
+        }
+
+        .score-box {
+            background: var(--verde-claro);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            background: var(--verde-primario);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: #eee;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo"><strong>Agro</strong>Sustentável</div>
+        <nav>
+            <a href="#" style="color:white; margin-left:15px; text-decoration:none;">Dashboard</a>
+            <a href="#" style="color:white; margin-left:15px; text-decoration:none;">Recursos</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Agro Forte, Futuro Sustentável</h1>
+        <p>Equilibrando a produtividade com a saúde do planeta.</p>
+    </section>
+
+    <main class="container">
+        <h2>Painel do Produtor</h2>
+        
+        <div class="grid-ferramentas">
+            <div class="card">
+                <h3>Calculadora de Carbono</h3>
+                <p>Veja quanto CO₂ sua propriedade está sequestrando através do plantio direto.</p>
+                <button class="btn">Calcular agora</button>
+            </div>
+
+            <div class="card">
+                <h3>Manejo de Água</h3>
+                <p>Previsão climática local integrada para otimizar sua irrigação diária.</p>
+                <button class="btn">Ver Previsão</button>
+            </div>
+
+            <div class="card">
+                <h3>Logística Reversa</h3>
+                <p>Encontre o ponto de descarte de embalagens mais próximo de você.</p>
+                <button class="btn">Abrir Mapa</button>
+            </div>
+        </div>
+
+        <div class="score-box">
+            <h2>Seu Score de Sustentabilidade: <span style="color: var(--verde-primario);">85/100</span></h2>
+            <p>Parabéns! Você está acima da média da sua região. Continue preservando as APPs.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>Projeto Desenvolvido para o Concurso Agrinho 2026 - O Futuro é Agro e Verde.</p>
+    </footer>
+
+</body>
+</html>
