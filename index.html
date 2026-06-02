@@ -7,10 +7,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --verde-primario: #2d6a4f;
-            --verde-claro: #d8f3dc;
-            --acento: #95d5b2;
-            --texto: #1b4332;
+            --preto: #1a1a1a;
+            --dourado-primario: #DAA520;
+            --dourado-claro: #FFF8DC;
+            --acento: #FFD700;
+            --texto: #1a1a1a;
         }
 
         body {
@@ -21,7 +22,8 @@
         }
 
         header {
-            background-color: var(--verde-primario);
+            background: linear-gradient(135deg, var(--preto) 0%, #2a2a2a 100%);
+            border-bottom: 3px solid var(--dourado-primario);
             color: white;
             padding: 1rem 5%;
             display: flex;
@@ -58,19 +60,21 @@
             padding: 1.5rem;
             border-radius: 12px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            border-bottom: 5px solid var(--verde-primario);
+            border-bottom: 5px solid var(--dourado-primario);
+            border-left: 3px solid var(--preto);
         }
 
         .score-box {
-            background: var(--verde-claro);
+            background: linear-gradient(135deg, var(--dourado-claro) 0%, #f5f5f5 100%);
             padding: 2rem;
             border-radius: 15px;
             text-align: center;
             margin-top: 2rem;
+            border: 2px solid var(--preto);
         }
 
         .btn {
-            background: var(--verde-primario);
+            background: linear-gradient(135deg, var(--preto) 0%, var(--dourado-primario) 100%);
             color: white;
             padding: 10px 20px;
             border: none;
@@ -99,8 +103,11 @@
     </header>
 
     <section class="hero">
-        <h1>Agro Forte, Futuro Sustentável</h1>
-        <p>Equilibrando a produtividade com a saúde do planeta.</p>
+        <div>
+            <h1>Agro Forte, Futuro Sustentável</h1>
+            <p>Equilibrando a produtividade com a saúde do planeta.</p>
+            <img src="https://i.pinimg.com/originals/89/86/9a/89869abb8cda2b1f6c3c3f3f5d5b7c8d.png" alt="Asta - Black Clover" class="asta-img">
+        </div>
     </section>
 
     <main class="container">
@@ -127,7 +134,7 @@
         </div>
 
         <div class="score-box">
-            <h2>Seu Score de Sustentabilidade: <span style="color: var(--verde-primario);">85/100</span></h2>
+            <h2>Seu Score de Sustentabilidade: <span style="color: var(--dourado-primario);">85/100</span></h2>
             <p>Parabéns! Você está acima da média da sua região. Continue preservando as APPs.</p>
         </div>
     </main>
