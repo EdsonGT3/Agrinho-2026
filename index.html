@@ -1,146 +1,128 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AgroSustentável | Agrinho 2026</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --verde-primario: #2d6a4f;
-            --verde-claro: #d8f3dc;
-            --acento: #95d5b2;
-            --texto: #1b4332;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            color: var(--texto);
-            background-color: #f8f9fa;
-        }
-
-        header {
-            background-color: var(--verde-primario);
-            color: white;
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                        url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-align: center;
-        }
-
-        .container {
-            padding: 2rem 5%;
-        }
-
-        .grid-ferramentas {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 2rem;
-        }
-
-        .card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            border-bottom: 5px solid var(--verde-primario);
-        }
-
-        .score-box {
-            background: var(--verde-claro);
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            margin-top: 2rem;
-        }
-
-        .btn {
-            background: var(--verde-primario);
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            background: #eee;
-            margin-top: 3rem;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
     <header>
-        <div class="logo"><strong>Agro</strong>Sustentável</div>
+        <div class="logo"><span>Agro</span>Sustentável</div>
         <nav>
-            <a href="#" style="color:white; margin-left:15px; text-decoration:none;">Dashboard</a>
-            <a href="#" style="color:white; margin-left:15px; text-decoration:none;">Recursos</a>
+            <a href="#dashboard">Início</a>
+            <a href="#recursos">Recursos</a>
+            <a href="#resultado-acao">Resultados</a>
         </nav>
     </header>
 
-    <section class="hero">
-        <h1>Agro Forte, Futuro Sustentável</h1>
-        <p>Equilibrando a produtividade com a saúde do planeta.</p>
+    <section class="hero" id="dashboard">
+        <div class="hero-panel">
+            <span class="eyebrow">Agrinho 2026</span>
+            <h1>Gestão sustentável para o campo brasileiro.</h1>
+            <p>Conectamos o produtor com tecnologia, previsões precisas e métricas reais para fortalecer a produção e cuidar do meio ambiente.</p>
+            <div class="hero-actions">
+                <a href="#recursos" class="btn">Conheça os recursos</a>
+                <a href="#resultado-acao" class="btn btn-secondary">Ver resultados</a>
+            </div>
+            <div class="hero-stats">
+                <article class="hero-stat">
+                    <strong>85%</strong>
+                    <span>Adesão sustentável</span>
+                </article>
+                <article class="hero-stat">
+                    <strong>+12</strong>
+                    <span>melhorias no score</span>
+                </article>
+                <article class="hero-stat">
+                    <strong>3</strong>
+                    <span>recursos acionáveis</span>
+                </article>
+            </div>
+        </div>
     </section>
 
     <main class="container">
-        <h2>Painel do Produtor</h2>
-        
-        <div class="grid-ferramentas">
+        <section class="intro">
+            <h2>Painel do Produtor</h2>
+            <p class="intro-text">Ferramentas práticas para monitorar carbono, água e logística reversa com uma navegação rápida e insights visuais.</p>
+        </section>
+
+        <section class="grid-ferramentas">
             <div class="card">
+                <div class="card-icon">🌱</div>
                 <h3>Calculadora de Carbono</h3>
-                <p>Veja quanto CO₂ sua propriedade está sequestrando através do plantio direto.</p>
-                <button class="btn">Calcular agora</button>
+                <p>Descubra o impacto das suas práticas agrícolas em emissões e sequestro de carbono.</p>
+                <button class="btn" type="button" id="btn-carbono">Calcular agora</button>
             </div>
 
             <div class="card">
+                <div class="card-icon">💧</div>
                 <h3>Manejo de Água</h3>
-                <p>Previsão climática local integrada para otimizar sua irrigação diária.</p>
-                <button class="btn">Ver Previsão</button>
+                <p>Aproveite previsões locais para irrigar apenas quando necessário e reduzir o consumo.</p>
+                <button class="btn" type="button" id="btn-previsao">Ver Previsão</button>
             </div>
 
             <div class="card">
+                <div class="card-icon">♻️</div>
                 <h3>Logística Reversa</h3>
-                <p>Encontre o ponto de descarte de embalagens mais próximo de você.</p>
-                <button class="btn">Abrir Mapa</button>
+                <p>Encontre pontos de descarte e retorno de embalagens em sua região rapidamente.</p>
+                <button class="btn" type="button" id="btn-mapa">Abrir Mapa</button>
             </div>
-        </div>
+        </section>
+
+        <section class="status-strip">
+            <article class="status-card">
+                <span>Score atual</span>
+                <strong id="score-valor">85/100</strong>
+            </article>
+            <article class="status-card">
+                <span>Objetivo</span>
+                <strong>100/100</strong>
+            </article>
+            <article class="status-card">
+                <span>Saúde do solo</span>
+                <strong>Bom</strong>
+            </article>
+        </section>
 
         <div class="score-box">
-            <h2>Seu Score de Sustentabilidade: <span style="color: var(--verde-primario);">85/100</span></h2>
-            <p>Parabéns! Você está acima da média da sua região. Continue preservando as APPs.</p>
+            <h2>Seu Score de Sustentabilidade</h2>
+            <p id="score-text">Parabéns! Você está acima da média da sua região. Continue preservando as APPs e adotando práticas regenerativas.</p>
         </div>
+
+        <section class="resultado" id="resultado-acao" hidden>
+            <h2 id="resultado-titulo">Resultado</h2>
+            <p id="resultado-texto">Aguardando uma ação.</p>
+            <div class="forecast-grid" id="forecast"></div>
+        </section>
     </main>
+
+    <section class="container recursos" id="recursos">
+        <h2>Recursos Agrinho</h2>
+        <p class="intro-text">Descrição dos recursos para apoiar a aplicação de boas práticas e a tomada de decisão no campo.</p>
+        <div class="grid-ferramentas">
+            <div class="card">
+                <h3>Parcerias Locais</h3>
+                <p>Conectamos você a fornecedores de insumos sustentáveis na sua região.</p>
+            </div>
+            <div class="card">
+                <h3>Proteção Ambiental</h3>
+                <p>Dicas práticas para conservar áreas de preservação permanente e nascentes.</p>
+            </div>
+            <div class="card">
+                <h3>Suporte Técnico</h3>
+                <p>Orientações gratuitas para melhorar a eficiência e reduzir custos no campo.</p>
+            </div>
+        </div>
+    </section>
 
     <footer>
         <p>Projeto Desenvolvido para o Concurso Agrinho 2026 - O Futuro é Agro e Verde.</p>
     </footer>
 
+    <script src="script.js" defer></script>
 </body>
 </html>
-<link rel="stylesheet" href="style.css">
-<div class="score-box">
-    <h2>Seu Score de Sustentabilidade</h2>
-    <span class="score-valor">85/100</span>
-    <p>Parabéns! Você está acima da média da sua região.</p>
-</div>
