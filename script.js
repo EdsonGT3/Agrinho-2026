@@ -4,6 +4,9 @@ const resultadoTitulo = document.getElementById('resultado-titulo');
 const resultadoTexto = document.getElementById('resultado-texto');
 const forecastContainer = document.getElementById('forecast');
 
+const WAZE_MAP_URL = 'https://www.waze.com/pt-BR/live-map/';
+const CLIMATEMPO_URL = 'https://www.climatempo.com.br/';
+
 const buttons = {
   carbono: document.getElementById('btn-carbono'),
   previsao: document.getElementById('btn-previsao'),
@@ -39,38 +42,21 @@ function calcularCarbono() {
 }
 
 function verPrevisao() {
-  const previsoes = [
-    { dia: 'Hoje', temp: '27°C', condicao: 'Parcialmente nublado', chuva: '10%' },
-    { dia: 'Amanhã', temp: '25°C', condicao: 'Chuvas leves', chuva: '40%' },
-    { dia: 'Depois de amanhã', temp: '23°C', condicao: 'Sol com nuvens', chuva: '20%' },
-  ];
-
-  resultadoTitulo.textContent = 'Previsão Climática Local';
-  resultadoTexto.textContent = 'Use esses dados para ajustar a irrigação e reduzir desperdícios de água.';
-  forecastContainer.innerHTML = previsoes
-    .map((item) => `
-      <article class="forecast-card">
-        <strong>${item.dia}</strong>
-        <p>${item.condicao}</p>
-        <p>Temperatura: ${item.temp}</p>
-        <p>Chance de chuva: ${item.chuva}</p>
-      </article>
-    `)
-    .join('');
-
-  scrollToResultado();
-}
-
-function abrirMapa() {
-  resultadoTitulo.textContent = 'Pontos de Descarte Próximos';
-  resultadoTexto.textContent = 'Abrindo o mapa de logística reversa em nova aba. Encontre o ponto de descarte mais próximo para embalagens e resíduos agrícolas.';
+  resultadoTitulo.textContent = 'Clima Tempo';
+  resultadoTexto.textContent = 'Abrindo o site Clima Tempo em nova aba para consultar a previsão detalhada.';
   forecastContainer.innerHTML = '';
   scrollToResultado();
 
-  window.open(
-    'https://www.google.com/maps/search/pontos+de+descarte+de+embalagens+agro+próximo/',
-    '_blank',
-  );
+  window.open(CLIMATEMPO_URL, '_blank', 'noopener,noreferrer');
+}
+
+function abrirMapa() {
+  resultadoTitulo.textContent = 'Waze';
+  resultadoTexto.textContent = 'Abrindo o Waze em nova aba para localizar rotas e pontos próximos.';
+  forecastContainer.innerHTML = '';
+  scrollToResultado();
+
+  window.open(WAZE_MAP_URL, '_blank', 'noopener,noreferrer');
 }
 
 if (buttons.carbono) {
