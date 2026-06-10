@@ -12,11 +12,18 @@
     <header>
         <div class="logo"><span>Agro</span>Sustentável</div>
         <nav>
-            <a href="#dashboard">Início</a>
-            <a href="#recursos">Recursos</a>
-            <a href="#resultado-acao">Resultados</a>
+            <a href="#welcome" id="nav-welcome">Boas-vindas</a>
+            <a href="#dashboard" id="nav-home">Início</a>
         </nav>
+        <button id="theme-toggle" class="btn btn-secondary" aria-label="Alternar modo">🌙</button>
     </header>
+
+    <section class="welcome-panel card" id="welcome">
+        <div class="welcome-content">
+            <h2>Bem-vindo ao AgroSustentável</h2>
+            <p>Este painel foi pensado para ajudar produtores e gestores a unir sustentabilidade e eficiência. Explore a calculadora de carbono, acompanhe preços regionais e consulte clima e rotas em tempo real.</p>
+        </div>
+    </section>
 
     <section class="hero" id="dashboard">
         <div class="hero-panel">
@@ -24,8 +31,6 @@
             <h1>Gestão sustentável para o campo brasileiro.</h1>
             <p>Conectamos o produtor com tecnologia, previsões precisas e métricas reais para fortalecer a produção e cuidar do meio ambiente.</p>
             <div class="hero-actions">
-                <a href="#recursos" class="btn">Conheça os recursos</a>
-                <a href="#resultado-acao" class="btn btn-secondary">Ver resultados</a>
             </div>
             <div class="hero-stats">
                 <article class="hero-stat">
@@ -38,7 +43,7 @@
                 </article>
                 <article class="hero-stat">
                     <strong>3</strong>
-                    <span>recursos acionáveis</span>
+                    <span>açōes acionáveis</span>
                 </article>
             </div>
         </div>
@@ -55,7 +60,7 @@
                 <div class="card-icon">🌱</div>
                 <h3>Calculadora de Carbono</h3>
                 <p>Descubra o impacto das suas práticas agrícolas em emissões e sequestro de carbono.</p>
-                <button class="btn" type="button" id="btn-carbono">Calcular agora</button>
+                <button class="btn" type="button" id="btn-carbono">Ir para cálculo</button>
             </div>
 
             <div class="card">
@@ -73,10 +78,67 @@
             </div>
         </section>
 
+        <section class="calculadora-carbono" id="carbon-calculator">
+            <div class="calculator-panel card">
+                <h2>Calculadora de Carbono</h2>
+                <p>Preencha as informações abaixo para estimar o sequestro e as emissões de CO₂ na sua propriedade.</p>
+
+                <form id="form-carbono">
+                    <div class="form-grid">
+                        <label>
+                            Hectares
+                            <input type="number" id="input-hectares" min="0.1" step="0.1" value="10" required />
+                        </label>
+
+                        <label>
+                            Tipo de manejo
+                            <select id="input-manejo">
+                                <option value="plantio-direto">Plantio direto</option>
+                                <option value="integracao">Integração Lavoura-Pecuária</option>
+                                <option value="agroflorestal">Sistema agroflorestal</option>
+                                <option value="convencional">Convencional</option>
+                            </select>
+                        </label>
+
+                        <label>
+                            Cobertura do solo
+                            <select id="input-cobertura">
+                                <option value="0.9">Baixa</option>
+                                <option value="1.0" selected>Média</option>
+                                <option value="1.1">Alta</option>
+                            </select>
+                        </label>
+
+                        <label>
+                            Uso de fertilizantes
+                            <select id="input-fertilizantes">
+                                <option value="1.4">Alto</option>
+                                <option value="1.0" selected>Médio</option>
+                                <option value="0.7">Baixo</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <button class="btn" type="submit">Calcular Carbono</button>
+                </form>
+
+                <div class="calculator-summary" id="carbon-result">
+                    <p>Use o formulário para receber a estimativa do balanço de carbono e ver recomendações práticas.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="container resultado" id="resultado-acao" hidden>
+            <h2 id="resultado-titulo">Painel de resultados</h2>
+            <p id="resultado-texto">Use os botões acima para calcular carbono, conferir previsão ou abrir o mapa.</p>
+            <div class="forecast-grid" id="forecast"></div>
+        </section>
+
         <section class="status-strip">
             <article class="status-card">
                 <span>Score atual</span>
                 <strong id="score-valor">85/100</strong>
+                <span id="score-text">Detalhes do balanço de carbono serão exibidos aqui.</span>
             </article>
             <article class="status-card">
                 <span>Objetivo</span>
@@ -88,41 +150,55 @@
             </article>
         </section>
 
-        <div class="score-box">
-            <h2>Seu Score de Sustentabilidade</h2>
-            <p id="score-text">Parabéns! Você está acima da média da sua região. Continue preservando as APPs e adotando práticas regenerativas.</p>
-        </div>
-
-        <section class="resultado" id="resultado-acao" hidden>
-            <h2 id="resultado-titulo">Resultado</h2>
-            <p id="resultado-texto">Aguardando uma ação.</p>
-            <div class="forecast-grid" id="forecast"></div>
-        </section>
     </main>
 
-    <section class="container recursos" id="recursos">
-        <h2>Recursos Agrinho</h2>
-        <p class="intro-text">Descrição dos recursos para apoiar a aplicação de boas práticas e a tomada de decisão no campo.</p>
-        <div class="grid-ferramentas">
-            <div class="card">
-                <h3>Parcerias Locais</h3>
-                <p>Conectamos você a fornecedores de insumos sustentáveis na sua região.</p>
-            </div>
-            <div class="card">
-                <h3>Proteção Ambiental</h3>
-                <p>Dicas práticas para conservar áreas de preservação permanente e nascentes.</p>
-            </div>
-            <div class="card">
-                <h3>Suporte Técnico</h3>
-                <p>Orientações gratuitas para melhorar a eficiência e reduzir custos no campo.</p>
-            </div>
+    <section class="container precos" id="precos">
+        <h2>Preços de hoje</h2>
+        <p class="intro-text">Confira os valores de alguns produtos agrícolas e insumos relevantes para sua tomada de decisão.</p>
+        <p class="price-updated" id="price-updated">Preços atualizados hoje.</p>
+        <p class="price-location" id="price-location">Selecione um estado e uma cidade para ver os preços.</p>
+        <div class="price-header">
+            <label for="state-select">Estado</label>
+            <select id="state-select">
+                <option value="ac">Acre</option>
+                <option value="al">Alagoas</option>
+                <option value="ap">Amapá</option>
+                <option value="am">Amazonas</option>
+                <option value="ba">Bahia</option>
+                <option value="ce">Ceará</option>
+                <option value="df">Distrito Federal</option>
+                <option value="es">Espírito Santo</option>
+                <option value="go">Goiás</option>
+                <option value="ma">Maranhão</option>
+                <option value="mt">Mato Grosso</option>
+                <option value="ms">Mato Grosso do Sul</option>
+                <option value="mg">Minas Gerais</option>
+                <option value="pa">Pará</option>
+                <option value="pb">Paraíba</option>
+                <option value="pr">Paraná</option>
+                <option value="pe">Pernambuco</option>
+                <option value="pi">Piauí</option>
+                <option value="rj">Rio de Janeiro</option>
+                <option value="rn">Rio Grande do Norte</option>
+                <option value="rs">Rio Grande do Sul</option>
+                <option value="ro">Rondônia</option>
+                <option value="rr">Roraima</option>
+                <option value="sc">Santa Catarina</option>
+                <option value="se">Sergipe</option>
+                <option value="to">Tocantins</option>
+            </select>
+
+            <label for="city-select">Cidade</label>
+            <select id="city-select"></select>
         </div>
+        <div class="grid-ferramentas" id="price-list"></div>
     </section>
 
     <footer>
         <p>Projeto Desenvolvido para o Concurso Agrinho 2026 - O Futuro é Agro e Verde.</p>
     </footer>
 
+    <script src="municipios.js" defer></script>
     <script src="script.js" defer></script>
 </body>
 </html>
